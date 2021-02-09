@@ -66,11 +66,15 @@ function App() {
         setTodos={setTodos}
         setStatus={setStatus}
       />
-      <TodoList
-        setTodos={setTodos}
-        todos={todos}
-        filteredTodos={filteredTodos}
-      />
+      {todos.length === 0 ? (
+        <h3 className="zero-plan">You done have any schedule</h3>
+      ) : (
+        <TodoList
+          setTodos={setTodos}
+          todos={todos}
+          filteredTodos={filteredTodos}
+        />
+      )}
     </div>
   );
 }
